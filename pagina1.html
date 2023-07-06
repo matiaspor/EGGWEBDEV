@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test de Contrasena</title>
+  <style>
+    body {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido/a (s)</h1>
+  <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+  <button onclick="mostrarMensaje()">Mostrar mensaje de bienvenida</button>
+
+  <hr>
+
+  <button onclick="cambiarColorFondo()">Cambiar color de fondo</button>
+
+  <hr>
+
+  <input type="number" id="numero" placeholder="Ingresa un número">
+  <button onclick="generarTabla()">Generar tabla de multiplicar</button>
+  <div id="tabla"></div>
+
+  <hr>
+
+  <button onclick="incrementarContador()">Haz clic aquí</button>
+  <div id="contador"></div>
+
+  <hr>
+
+  <input type="password" id="contrasena" placeholder="Ingresa tu contraseña">
+  <button onclick="verificarContrasena()">Verificar contraseña</button>
+  <div id="mensaje"></div>
+
+  <script>
+    function mostrarMensaje() {
+      var nombre = document.getElementById("nombre").value;
+      alert("Bienvenido/a, " + nombre + "!");
+    }
+
+    function cambiarColorFondo() {
+      var colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#00ffff"];
+      var color = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = color;
+    }
+
+    function generarTabla() {
+      var numero = document.getElementById("numero").value;
+      var tablaHTML = "<h3>Tabla de multiplicar del " + numero + "</h3>";
+      tablaHTML += "<table>";
+      for (var i = 1; i <= 10; i++) {
+        tablaHTML += "<tr><td>" + numero + " x " + i + "</td><td>=</td><td>" + (numero * i) + "</td></tr>";
+      }
+      tablaHTML += "</table>";
+      document.getElementById("tabla").innerHTML = tablaHTML;
+    }
+
+    var contador = 0;
+    function incrementarContador() {
+      contador++;
+      document.getElementById("contador").innerHTML = "Número de clics: " + contador;
+    }
+
+    function verificarContrasena() {
+      var contrasena = document.getElementById("contrasena").value;
+      if (contrasena === "test") {
+        document.getElementById("mensaje").innerHTML = "Contraseña correcta. Acceso concedido.";
+      } else {
+        document.getElementById("mensaje").innerHTML = "Contraseña incorrecta. Acceso denegado.";
+      }
+    }
+  </script>
+</body>
+</html>

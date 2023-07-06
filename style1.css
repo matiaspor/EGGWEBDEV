@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #FFD700, #FF69B4, #00CED1);
+  background-size: 600% 600%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content {
+  text-align: center;
+}
+
+.content h1, .content h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 40px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-family: "Arial", sans-serif;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+img {
+  width: 200px;
+  height: auto;
+}
+
+.caja-container {
+  display: flex;
+  justify-content: center;
+}
+
+.caja {
+  width: 200px;
+  height: 150px;
+  margin: 20px, 10px, 20px, 10px;
+  padding: 10px;
+  border: 1px solid blue;
+  background-color: aqua;
+}
+.caja1 {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blue;
+  background-color: aqua;
+}
+.caja2 {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blue;
+  background-color: aqua;
+}
+.caja3 {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid blue;
+  background-color: aqua;
+}
+
+
+.bloque-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bloque {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.bloque1 {
+  background-color: #FFD700;
+}
+
+.bloque2 {
+  background-color: #FF69B4;
+}
+
+.bloque3 {
+  background-color: #00CED1;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #cc0000;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  padding: 1em;
+}
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  width: 1000px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.navbar-list li {
+  margin: 0 10px;
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  color: white;
+}
+.container {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}

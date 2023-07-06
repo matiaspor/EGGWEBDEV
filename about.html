@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sobre Mi</title>
+    <style>
+        body {
+            background: #D1FFFF;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: "Raleway", sans-serif;
+
+        #axolotl {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: auto;
+            transition: transform 0.2s ease-out;
+            transform-origin: center;
+            z-index: 2;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            opacity: 0;
+            animation: bubbleRise 3s linear infinite;
+        }
+
+        @keyframes bubbleRise {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh);
+            }
+        }
+
+        #aboutMeContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #aboutMeContainer p {
+            margin: 10px 0;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="aboutMeContainer">
+        <p class="highlight" style="font-size: 50px;">Sobre Mi</p>
+        <p>Hola, Soy Matias</p>
+        <p>Me Gusta El Minecraft, La Música y Programar.</p>
+    </div>
+
+    <img id="axolotl" src="https://i.ibb.co/D4kfjm0/fbc3c8c5c8a8695595e5acf059235f34-upscayl-4x-realesrgan-x4plus-anime-1.png" alt="Axolotl Image">
+
+    <!-- Bubble container -->
+    <div id="bubbleContainer"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var axolotl = document.getElementById("axolotl");
+            var bubbleContainer = document.getElementById("bubbleContainer");
+            var bodyWidth = document.body.clientWidth;
+            var bodyHeight = document.body.clientHeight;
+
+            setInterval(function () {
+                var bubble = document.createElement("div");
+                bubble.className = "bubble";
+                bubble.style.left = getRandomPosition(bodyWidth) + "px";
+                bubbleContainer.appendChild(bubble);
+
+                setTimeout(function () {
+                    bubble.remove();
+                }, 3000);
+            }, 200);
+
+            function getRandomPosition(max) {
+                return Math.floor(Math.random() * max);
+            }
+
+            document.addEventListener("mousemove", function (event) {
+                axolotl.style.transform = "translate(" + event.clientX + "px, " + event.clientY + "px)";
+            });
+        });
+    </script>
+</body>
+</html>
